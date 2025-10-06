@@ -1,0 +1,50 @@
+//  Test Case 1: Full Match
+Input:
+Symbol: TCS
+Side: BUY
+Price: 100
+Quantity: 40
+
+Symbol: TCS
+Side: SELL
+Price: 100
+Quantity: 40
+
+Expected Output:
+TradeID: 1, Symbol: TCS, Price: 100, Qty: 40
+
+---
+
+//  Test Case 2: Partial Fill
+Input:
+Symbol: INFY
+Side: BUY
+Price: 1500.5
+Quantity: 75
+
+Symbol: INFY
+Side: SELL
+Price: 1500.5
+Quantity: 50
+
+Expected Output:
+TradeID: 2, Symbol: INFY, Price: 1500.5, Qty: 50  
+Remaining BUY: 25 units @ 1500.5
+
+---
+
+//  Test Case 3: No Match
+Input:
+Symbol: HDFCBANK
+Side: BUY
+Price: 1600
+Quantity: 100
+
+Symbol: HDFCBANK
+Side: SELL
+Price: 1650
+Quantity: 100
+
+Expected Output:
+No trades executed  
+Both orders remain in book
