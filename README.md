@@ -1,12 +1,12 @@
 # ⚡ NanoMatch — High-Speed Trade Matching Engine
 
-A modular C++ project that simulates how real exchanges match trades at high speed with nanosecond-level precision. This engine captures incoming orders, matches them based on price-time priority, and logs trades with formatted timestamps — just like actual HFT systems.
+A modular C++ project that simulates how exchanges match trades quickly and accurately. This engine captures incoming orders, matches them based on price-time priority, and logs trades with formatted timestamps — just like real-world trading systems.
 
 ---
 
 ## 📌 Project Overview
 
-NanoMatch is inspired by real-world trading engines used in high-frequency environments. It simulates:
+NanoMatch is inspired by real exchange backends. It simulates:
 
 - Order intake (BUY / SELL)
 - Price-time priority matching
@@ -14,7 +14,7 @@ NanoMatch is inspired by real-world trading engines used in high-frequency envir
 - Nanosecond timestamp logging
 - Audit trail generation
 
-Each trade is stored with full metadata including symbol, quantity, price, side, and timestamp — making it suitable for compliance, analytics, and latency tracking.
+Each trade is stored with full metadata including symbol, quantity, price, side, and timestamp — making it suitable for compliance, analytics, and performance tracking.
 
 ---
 
@@ -23,14 +23,14 @@ Each trade is stored with full metadata including symbol, quantity, price, side,
 - **Order Struct**: Captures incoming orders with symbol, price, quantity, side, and timestamp  
 - **Matching Engine**: Matches BUY and SELL orders using price-time priority logic  
 - **Trade Logger**: Stores executed trades with nanosecond timestamps  
-- **Audit Trail Formatter**: Converts raw timestamps into human-readable format for compliance  
+- **Audit Trail Formatter**: Converts raw timestamps into human-readable format  
 - **CSV Exporter**: Writes trade history to CSV file for external analysis
 
 ---
 
 ## 🧪 Sample Trade Log
 
-Symbol: SAMMSUNG 
+Symbol: INFY 
 
 Price: 1560.25 
 
@@ -45,11 +45,11 @@ Time: 12:45:23.456789123
 
 ## 🧠 Real-World Mapping
 
-| Module | Exchange Role |
-|--------|----------------|
+| Module | System Role |
+|--------|--------------|
 | Matching Engine | Core trade execution logic |
-| Timestamp Logger | Latency tracking + audit trail |
-| CSV Export | Compliance + external reporting |
+| Timestamp Logger | Performance tracking + audit trail |
+| CSV Export | External reporting |
 | Price-Time Priority | Fairness + deterministic matching |
 | Side Normalization | Standardized trade direction |
 
@@ -63,25 +63,24 @@ Time: 12:45:23.456789123
 4. View matched trades and audit logs  
 5. Export trade history to CSV file
 
----
+### 🛠 Sample Compilation Command
 
-## 🤖 Built with AI Mentorship
+```bash
+g++ -std=c++17 -o NanoMatch src/*.cpp
+./NanoMatch
 
+
+🤖 Built with AI Mentorship
 I used Microsoft Copilot as a mentor — not a coder. It helped me validate matching logic, format timestamps, and structure modules clearly. I never followed anything blindly. Every suggestion was reviewed, modified, and tested. The final code is fully mine and mapped to real-world trading infrastructure.
 
----
+🧠 Why This Project Matters
+Simulates core matching logic used in real exchanges
 
-## 🧠 Why This Project Matters
+Shows timestamp literacy and audit trail formatting
 
-- Simulates core matching logic used in real exchanges  
-- Shows timestamp literacy and audit trail formatting  
-- Demonstrates modular thinking and infra-grade design  
-- Recruiter-ready and easy to explain in interviews
+Demonstrates modular thinking and performance-focused design
 
----
+Recruiter-ready and easy to explain in interviews
 
-## 🙋‍♂️ About Me
-
-Built by [Saksham Verma](https://www.linkedin.com/in/saksham-verma-302271285/)  
-Focused on modular C++ projects, timestamp precision, and real-world trading simulations.
-
+🙋‍♂️ About Me
+📇 Connect with me on [LinkedIn](https://www.linkedin.com/in/saksham-verma-302271285/)
