@@ -1,0 +1,31 @@
++------------------+
+|  User Input      |
+|  (Symbol, Side,  |
+|   Price, Qty)    |
++--------+---------+
+         |
+         v
++------------------+
+|  Normalize Side  |
+|  + Timestamp     |
++--------+---------+
+         |
+         v
++------------------+
+|  Match Engine    |
+|  BUY → SELL pool |
+|  SELL → BUY pool |
++--------+---------+
+         |
+         v
++------------------+
+|  Trade Execution |
+|  Partial fills   |
+|  TradeID + Time  |
++--------+---------+
+         |
+         v
++------------------+
+|  Trade History   |
+|  + CSV Export    |
++------------------+
