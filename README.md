@@ -65,15 +65,15 @@ Time: 12:45:23.456789123
 
 ### 🛠 Sample Compilation Command
 
-```bash
+bash
 g++ -std=c++17 -o NanoMatch src/*.cpp
 ./NanoMatch
 
 
-🤖 Built with AI Mentorship
+##🤖 Built with AI Mentorship
 I used Microsoft Copilot as a mentor — not a coder. It helped me validate matching logic, format timestamps, and structure modules clearly. I never followed anything blindly. Every suggestion was reviewed, modified, and tested. The final code is fully mine and mapped to real-world trading infrastructure.
 
-🧠 Why This Project Matters
+##🧠 Why This Project Matters
 Simulates core matching logic used in real exchanges
 
 Shows timestamp literacy and audit trail formatting
@@ -82,5 +82,5 @@ Demonstrates modular thinking and performance-focused design
 
 Recruiter-ready and easy to explain in interviews
 
-🙋‍♂️ About Me
+##🙋‍♂️ About Me
 📇 Connect with me on [Saksham Verma](https://www.linkedin.com/in/saksham-verma-302271285/)  
