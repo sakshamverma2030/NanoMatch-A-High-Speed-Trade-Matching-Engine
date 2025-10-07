@@ -82,5 +82,5 @@ Demonstrates modular thinking and performance-focused design
 
 Recruiter-ready and easy to explain in interviews
 
-🙋‍♂️ About Me
+
 📇 Connect with me on [Saksham Verma](https://www.linkedin.com/in/saksham-verma-302271285/)  
