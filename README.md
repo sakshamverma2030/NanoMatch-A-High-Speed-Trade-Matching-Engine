@@ -1,4 +1,4 @@
-# ⚡ NanoMatch — High-Speed Trade Matching Engine
+#  NanoMatch — High-Speed Trade Matching Engine
 
 A modular C++ project that simulates how exchanges match trades quickly and accurately. This engine captures incoming orders, matches them based on price-time priority, and logs trades with formatted timestamps — just like real-world trading systems.
 
