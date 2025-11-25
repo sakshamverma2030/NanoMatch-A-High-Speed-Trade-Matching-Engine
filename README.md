@@ -70,16 +70,14 @@ g++ -std=c++17 -o NanoMatch src/*.cpp
 ./NanoMatch
 
 📂 How to Get the CSV File
-The engine has a built‑in method exportCSVtoFile() that writes all executed trades into a file named trades.csv.
 
-After running the program, check your project’s working directory (e.g., Debug/ folder in Visual Studio).
+1. The engine has a built‑in method exportCSVtoFile() that writes all executed trades into a file named trades.csv.
+2. After running the program, check your project’s working directory (e.g., Debug/ folder in Visual Studio).
+
 
 To open the file quickly:
-
-
 notepad trades.csv
 or
-
 
 start trades.csv
 The CSV file contains rows in the format:
