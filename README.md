@@ -69,6 +69,8 @@ bash
 g++ -std=c++17 -o NanoMatch src/*.cpp
 ./NanoMatch
 
+
+
 📂 How to Get the CSV File
 
 1. The engine has a built‑in method exportCSVtoFile() that writes all executed trades into a file named trades.csv.
@@ -84,13 +86,7 @@ or
 
 start trades.csv
 
-The CSV file contains rows in the format:
 
-Code
-
-TradeID,Symbol,Price,Quantity,Timestamp
-
-1,INFY,1560.25,100,1764054220631981000 ns
 
 
 🤖 Built with AI Mentorship
