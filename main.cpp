@@ -6,8 +6,10 @@
 #include <deque>
 #include <sstream>
 #include <iomanip>
+#include <fstream>
 using namespace std;
 
+// Order Struct
 struct Order {
     int orderID;
     string symbol;
@@ -17,6 +19,7 @@ struct Order {
     string timestamp;
 };
 
+// Trade Struct
 struct Trade {
     int tradeID;
     string symbol;
@@ -25,6 +28,7 @@ struct Trade {
     chrono::high_resolution_clock::time_point timestamp;
 };
 
+// Timestamp Formatter
 string getCurrentTimestamp() {
     auto now = chrono::system_clock::now();
     auto ms = chrono::duration_cast<chrono::milliseconds>(now.time_since_epoch()) % 1000;
@@ -42,6 +46,7 @@ string formatTimestamp(chrono::high_resolution_clock::time_point ts) {
     return to_string(nanos) + " ns";
 }
 
+// OrderBook Class
 class OrderBook {
 public:
     map<double, deque<Order>, greater<double>> buyOrders;
@@ -53,7 +58,6 @@ public:
     void addOrder(Order o) {
         o.orderID = orderCounter++;
         o.timestamp = getCurrentTimestamp();
-
         for (auto& c : o.side) c = toupper(c);
 
         if (o.side == "BUY") {
@@ -101,15 +105,6 @@ public:
         if (o.quantity > 0) sellOrders[o.price].push_back(o);
     }
 
-    void printTrades() {
-        cout << "\n--- Trade History ---\n";
-        for (auto& t : trades) {
-            cout << "TradeID: " << t.tradeID << ", Symbol: " << t.symbol
-                 << ", Price: " << t.price << ", Qty: " << t.quantity
-                 << ", Time: " << formatTimestamp(t.timestamp) << endl;
-        }
-    }
-
     void printBook() {
         cout << "\n--- BUY Orders ---\n";
         for (auto& [price, dq] : buyOrders) {
@@ -128,17 +123,35 @@ public:
         }
     }
 
+    void printTrades() {
+        cout << "\n--- Trade History ---\n";
+        for (auto& t : trades) {
+            cout << "TradeID: " << t.tradeID << ", Symbol: " << t.symbol
+                 << ", Price: " << t.price << ", Qty: " << t.quantity
+                 << ", Time: " << formatTimestamp(t.timestamp) << endl;
+        }
+    }
+
     void printCSV() {
-        cout << "\n--- CSV Export ---\n";
+        cout << "\n--- CSV Export Preview ---\n";
         cout << "TradeID,Symbol,Price,Quantity,Timestamp\n";
         for (auto& t : trades) {
-            ostringstream oss;
-            oss << t.tradeID << "," << t.symbol << "," << t.price << "," << t.quantity << "," << formatTimestamp(t.timestamp);
-            cout << oss.str() << endl;
+            cout << t.tradeID << "," << t.symbol << "," << t.price << "," << t.quantity << "," << formatTimestamp(t.timestamp) << endl;
         }
+    }
+
+    void exportCSVtoFile() {
+        ofstream file("trades.csv");
+        file << "TradeID,Symbol,Price,Quantity,Timestamp\n";
+        for (auto& t : trades) {
+            file << t.tradeID << "," << t.symbol << "," << t.price << "," << t.quantity << "," << formatTimestamp(t.timestamp) << "\n";
+        }
+        file.close();
+        cout << "✅ trades.csv file created successfully.\n";
     }
 };
 
+// Main Function
 int main() {
     OrderBook ob;
     int n;
@@ -163,6 +176,7 @@ int main() {
     ob.printBook();
     ob.printTrades();
     ob.printCSV();
+    ob.exportCSVtoFile(); 
 
     return 0;
 }
